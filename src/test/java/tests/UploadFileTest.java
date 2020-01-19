@@ -13,9 +13,9 @@ public class UploadFileTest extends BaseTest {
     String path2;
 
     @BeforeSuite
-    public void getFilesAbsolute(){
-        File file = new File("src\\test\\resources\\files\\dunno.jpg");
-        File file2 = new File("src\\test\\resources\\files\\home.jpg");
+    public void getFilesAbsolute() {
+        File file = new File("src\\test\\resources\\files\\dunno1.jpg");
+        File file2 = new File("src\\test\\resources\\files\\home2.jpg");
         path = file.getAbsolutePath();
         path2 = file2.getAbsolutePath();
     }
@@ -28,13 +28,13 @@ public class UploadFileTest extends BaseTest {
     }
 
     @Test
-    public void uploadOneImage(){
+    public void uploadOneImage() {
         upload.uploadFile(path);
         upload.validateImagesUploaded(1);
     }
 
     @Test
-    public void uploadMultipleImages(){
+    public void uploadMultipleImages() {
         upload.uploadFile(path, path2);
         upload.validateImagesUploaded(2);
 

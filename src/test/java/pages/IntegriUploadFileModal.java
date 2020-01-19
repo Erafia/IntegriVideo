@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.testng.Assert.assertEquals;
 
@@ -20,14 +19,14 @@ public class IntegriUploadFileModal extends BasePage {
         super(driver);
     }
 
-    public void openUploadWindow(){
+    public void openUploadWindow() {
         driver.get(URL);
         wait.until(ExpectedConditions.visibilityOfElementLocated(UPLOAD_BUTTON));
         driver.findElement(UPLOAD_BUTTON).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(UPLOAD_MODAL));
     }
 
-    public void uploadFile(String ... pathsToFile){
+    public void uploadFile(String... pathsToFile) {
         for (String path : pathsToFile) {
             driver.findElement(PATH_TO_FIELD).sendKeys(path);
             wait.until(ExpectedConditions.elementToBeClickable(START_UPLOAD_BUTTON));
@@ -37,7 +36,7 @@ public class IntegriUploadFileModal extends BasePage {
 
     }
 
-    public void validateImagesUploaded(int imagesNumber){
+    public void validateImagesUploaded(int imagesNumber) {
         wait.until(ExpectedConditions.numberOfElementsToBe(MESSAGE_TEXT, imagesNumber));
         assertEquals(imagesNumber, driver.findElements(MESSAGE_TEXT), "Images were not uplaoded");
     }

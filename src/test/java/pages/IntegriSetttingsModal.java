@@ -21,7 +21,7 @@ public class IntegriSetttingsModal extends BasePage {
         super(driver);
     }
 
-    public void openSettings(){
+    public void openSettings() {
         driver.get(URL);
         wait.until(ExpectedConditions.visibilityOfElementLocated(SETTINGS_BUTTON));
         driver.findElement(SETTINGS_BUTTON).click();
@@ -56,7 +56,8 @@ public class IntegriSetttingsModal extends BasePage {
     public void clickCancelButton() {
         driver.findElement(CANCEL_BUTTON).click();
     }
-    public void validateDisplayedNameEqualSetName(String value){
+
+    public void validateDisplayedNameEqualSetName(String value) {
         String displayedName = driver.findElement(DISPLAYED_NAME).getText();
         assertEquals(displayedName, value);
     }

@@ -75,6 +75,7 @@ public class MessageCRUDTest extends BaseTest {
         chat.editMessage("");
         chat.validationMessageIsDisplayed();
     }
+
     @Test
     public void validateDeletingMessage() {
         chat.typeAndSendMessage(message, 1);

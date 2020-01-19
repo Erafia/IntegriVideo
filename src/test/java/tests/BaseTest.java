@@ -12,7 +12,6 @@ public class BaseTest {
     public void initialize() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
-
     }
 
     @AfterMethod
